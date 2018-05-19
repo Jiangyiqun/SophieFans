@@ -121,7 +121,7 @@ def log_result(clf, vocabulary, do_log, do_norm):
     prediction_test = get_prediction(clf, './test_data.txt', vocabulary,\
             do_log, do_norm)
     rate_test = prediction_test.tolist().count(1) / prediction_test.shape[0] * 100
-    with open('./linear_l1norm.txt', 'a+') as handle:
+    with open('./rbf_l1norm.txt', 'a+') as handle:
         handle.write('######################################################\n')
         handle.write('PPR(do_log=' + str(do_log) + ', do_norm ='\
                 + str(do_norm) + ')\n')
@@ -154,10 +154,10 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     #  and modifications limit checking
     strategy_instance=helper.strategy() 
 
-    # gamma : float, optional (default='auto')
+    # gamma : float, optional (default='auto') 2**-15 ~ 2**3
     #     Kernel coefficient for 'rbf', 'poly' and 'sigmoid'.
     #     If gamma is 'auto' then 1/n_features will be used instead.
-    # C : float, optional (default=1.0)
+    # C : float, optional (default=1.0) 2**-5 ~ 2**15
     #     Penalty parameter C of the error term.
     # kernel : string, optional (default='rbf')
     #     Specifies the kernel type to be used in the algorithm.
@@ -174,7 +174,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     #    It is only significant in 'poly' and 'sigmoid'.
     parameters={'gamma': 'auto',
             'C': 1.0,
-            'kernel': 'linear',
+            'kernel': 'rbf',
             'degree': 3,
             'coef0': 0.0 
             }
@@ -186,21 +186,25 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # get y_train
     y_train = get_y_train(strategy_instance)
     # compare different parameters
-    remained_iteration = 42
+    remained_iteration = 798
     do_log = False
     for i in range(-5, 16):
         c = 2 ** i
         parameters['C'] = c
-        calculate_parameter(strategy_instance, vocabulary, parameters,\
-            y_train, do_log, do_norm, remained_iteration)
-        remained_iteration -= 1
+        for j in range(-15, 4):
+            parameters['gamma'] = 2 ** j
+            calculate_parameter(strategy_instance, vocabulary, parameters,\
+                y_train, do_log, do_norm, remained_iteration)
+            remained_iteration -= 1
     do_log = True
     for i in range(-5, 16):
         c = 2 ** i
         parameters['C'] = c
-        calculate_parameter(strategy_instance, vocabulary, parameters,\
-            y_train, do_log, do_norm, remained_iteration)
-        remained_iteration -= 1
+        for j in range(-15, 4):
+            parameters['gamma'] = 2 ** j
+            calculate_parameter(strategy_instance, vocabulary, parameters,\
+                y_train, do_log, do_norm, remained_iteration)
+            remained_iteration -= 1
     # debug('y_train:', type(y_train), y_train.shape)
     # get x_train
     # x_train = get_x_train(strategy_instance, do_log=False, do_norm=None)
