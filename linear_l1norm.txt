@@ -21,3 +21,901 @@ test_data =
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=0.03125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=0.0625, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=0.125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=0.25, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=0.5, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=1, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=2, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=4, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=8, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=16, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.5
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=32, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 5.555555555555555
+test_data Success Rate = 2.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=64, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 46.666666666666664
+test_data Success Rate = 14.499999999999998
+class-1 =
+[1 0 1 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 1 1 0 1 0 1 0 1
+ 0 1 1 1 0 0 0 1 1 0 1 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 0 0 0 1 1 1 1 0 1 1
+ 1 0 1 0 0 1 1 0 1 1 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 0 1 1 1 0 0 0 1
+ 1 0 0 0 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 1 1 0 0 1
+ 0 0 1 0 0 1 0 1 0 0 0 1 1 1 1 0 1 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+test_data =
+[0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0
+ 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=128, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 80.0
+test_data Success Rate = 32.0
+class-1 =
+[1 1 1 1 1 0 1 0 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1
+ 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1
+ 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 0 1 0 1 1 0 1 1 1 1 0 1 1 1 1 0 0 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 0 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1
+ 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 0 1 0]
+test_data =
+[0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0
+ 0 0 1 0 0 0 1 0 0 0 1 1 0 1 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1
+ 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 1 0 0 1 1 1 0 0 0 0 1
+ 0 1 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 1 1 1 0
+ 0 1 0 1 1 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=256, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 98.33333333333333
+test_data Success Rate = 43.5
+class-1 =
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1
+ 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 1 1 1 1 0 1 0 0 1 0 0 1 1 1 1 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 0 0 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 0 1 0 1 1 1 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 0 0 0 0 1 1]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=512, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=1024, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=2048, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=4096, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=8192, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=16384, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=False, do_norm =l1)
+SVC(C=32768, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 1 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0
+ 1 1 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 1 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=0.03125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=0.0625, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=0.125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=0.25, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=0.5, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=1, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=2, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=4, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=8, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=16, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=32, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 5.0
+test_data Success Rate = 1.5
+class-1 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0]
+test_data =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=64, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 99.72222222222223
+class-1   Success Rate = 57.77777777777777
+test_data Success Rate = 16.5
+class-0 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+class-1 =
+[1 0 1 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 1 0 1 1 1 0 1 1 1 0 1
+ 0 1 1 1 1 0 1 1 1 0 1 1 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 0 0 0 1 1 1 1 0 1 1
+ 1 1 1 0 1 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 0 0 0 1 0 1 1 1 1 0 1 1 1 1 0 0 1
+ 1 0 0 0 0 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 1 0 1 1 0 1 0 1 1 1 1 0 1
+ 1 0 1 1 1 1 0 1 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 0 1 1 1 0 0 1 0]
+test_data =
+[0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0
+ 0 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0
+ 0 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 1 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=128, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 99.72222222222223
+class-1   Success Rate = 92.22222222222223
+test_data Success Rate = 33.5
+class-0 =
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+class-1 =
+[1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
+ 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+ 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1]
+test_data =
+[1 0 0 1 1 1 0 0 0 1 1 0 0 0 0 0 0 0 1 0 1 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0
+ 0 0 1 0 0 0 1 0 0 0 1 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1
+ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 0 0 1 0 0 1 0 0 1 1 1 1 0 0 0 0
+ 0 1 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 0
+ 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 0
+ 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=256, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 45.5
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 1 0 1 0 1 1 0 0 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 0 0
+ 0 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=512, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=1024, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=2048, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=4096, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=8192, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=16384, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
+######################################################
+PPR(do_log=True, do_norm =l1)
+SVC(C=32768, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 100.0
+class-1   Success Rate = 100.0
+test_data Success Rate = 49.0
+test_data =
+[1 0 0 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0
+ 0 0 1 0 0 1 1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1 1 1 0 0 0 0 1 0 0 1 0 1 1
+ 1 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 1 1 1 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0
+ 1 1 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 1 0 1 1 1 0 1
+ 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1 0 1 0 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0
+ 0 1 0 1 0 0 0 0 0 1 1 0 0 1 0]
+
