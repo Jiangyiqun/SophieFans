@@ -1,0 +1,210 @@
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=0.03125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=0.0625, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=0.125, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=0.25, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 0.0
+test_data Success Rate = 0.0
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=0.5, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 0.13990905911157747
+test_data Success Rate = 0.03497726477789437
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=1, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 2.0111927247289265
+test_data Success Rate = 0.6470793983910458
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=2, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.278419027632038
+class-1   Success Rate = 2.9380902413431267
+test_data Success Rate = 1.346624693948933
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=4, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.7663518712836657
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=8, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=16, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=32, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=64, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=128, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=256, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=512, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=1024, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=2048, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=4096, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=8192, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=16384, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
+######################################################
+PPR(do_log=True, do_norm =l2)
+SVC(C=32768, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+class-0   Success Rate = 6.295907660020986
+class-1   Success Rate = 3.147953830010493
+test_data Success Rate = 1.8188177684505071
+
