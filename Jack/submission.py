@@ -45,7 +45,7 @@ def get_feature(input_matrix, vocabulary):
         for word in input_list:
             try:
                 i = vocabulary.index(word)
-                output_list[i] = 1
+                output_list[i] += 1
             except ValueError:
                 pass    # pass when the word is not in word_table
         output_matrix.append(output_list)
@@ -236,7 +236,7 @@ def show_test_result(clf, vocabulary):
     print('class-0 prediction =\n' + str(prediction0))
     print('class-1 prediction =\n' + str(prediction1))
     print('test_data prediction =\n' + str(prediction_test))
-    print('modiefied_data prediction =\n' + str(prediction_test))
+    print('modiefied_data prediction =\n' + str(prediction_mod))
 
 
 ################################ fool_classifier ###############################
