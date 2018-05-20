@@ -24,9 +24,9 @@ class countcalls(object):
 class strategy:
     ## Read in the required training data...
     def __init__(self):
-        with open('class-0.txt','r') as class0:
+        with open('class-0.txt.reduced','r') as class0:
             class_0=[line.strip().split(' ') for line in class0]
-        with open('class-1.txt','r') as class1:
+        with open('class-1.txt.reduced','r') as class1:
             class_1=[line.strip().split(' ') for line in class1]
         self.class0=class_0
         self.class1=class_1

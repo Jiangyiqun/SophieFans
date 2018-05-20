@@ -148,7 +148,10 @@ def log_result(clf, vocabulary, do_bern, do_log, do_norm):
     prediction_test = get_prediction(clf, './test_data.txt', vocabulary,\
             do_bern, do_log, do_norm)
     rate_test = prediction_test.tolist().count(1) / prediction_test.shape[0] * 100
-    with open('./linear_nonorm_bern.txt', 'a+') as handle:
+    prediction_mod = get_prediction(clf, './modified_data.txt', vocabulary,\
+            do_bern, do_log, do_norm)
+    rate_mod = prediction_mod.tolist().count(0) / prediction_test.shape[0] * 100
+    with open('./result.txt', 'a+') as handle:
         handle.write('######################################################\n')
         handle.write('PPR(do_log=' + str(do_log) + ', do_norm ='\
                 + str(do_norm) + ')\n')
@@ -156,12 +159,15 @@ def log_result(clf, vocabulary, do_bern, do_log, do_norm):
         handle.write('class-0   Success Rate = ' + str(rate0) + '\n')
         handle.write('class-1   Success Rate = ' + str(rate1) + '\n')
         handle.write('test_data Success Rate = ' + str(rate_test) + '\n')
+        handle.write('modified_data Success Rate = ' + str(rate_mod) + '\n')
         if rate0 < 100:
             handle.write('class-0 =\n' + str(prediction0) + '\n')
         if rate1 < 100:
             handle.write('class-1 =\n' + str(prediction1) + '\n')
         if rate_test < 100:
             handle.write('test_data =\n' + str(prediction_test) + '\n')
+        if rate_mod < 100:
+            handle.write('modiefied_data =\n' + str(prediction_test) + '\n')
         handle.write('\n')
 
 
@@ -213,26 +219,74 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     vocabulary = get_vocabulary(strategy_instance)
     # get y_train
     y_train = get_y_train(strategy_instance)
-    # compare different parameters
-    remained_iteration = 21
-    calculate_parameter(strategy_instance, vocabulary, parameters,\
-            y_train, do_bern, do_log, do_norm, remained_iteration)
-    # for i in range(-5, 16):
-    #     c = 2 ** i
-    #     parameters['C'] = c
-    #     calculate_parameter(strategy_instance, vocabulary, parameters,\
-    #         y_train, do_bern, do_log, do_norm, remained_iteration)
-    #     remained_iteration -= 1
-    # debug('y_train:', type(y_train), y_train.shape)
-    # clf = strategy_instance.train_svm(parameters, x_train, y_train)
-    # log_result(clf, vocabulary, do_bern, do_log, do_norm)
+    # get x_train
+    x_train = get_x_train(strategy_instance, vocabulary, do_bern, do_log, do_norm)
+    # training
+    clf = strategy_instance.train_svm(parameters, x_train, y_train)
     ##..................................#
     ## Write out the modified file, i.e., 'modified_data.txt' in Present Working Directory...
-    
-    
+    # generate weight_table corresponded by vocabulary
+    weight_table = clf.coef_.tolist()[0]
+    class0_vocabulary = []
+    for i in range(2):
+        class0_word = vocabulary[weight_table.index(sorted(weight_table)[i])]
+        class0_vocabulary.append(class0_word)
+    class1_vocabulary = []
+    for i in range(2):
+        class1_word = vocabulary[weight_table.index(sorted(weight_table)[-i - 1])]
+        class1_vocabulary.append(class1_word)
+    # debug(vocabulary)
+    # debug(weight_table)
+    debug(class0_vocabulary)
+    debug(class1_vocabulary)
+    # read file
+    with open('./test_data.reduced','r') as test_data_file:
+        test_data_matrix=[line.strip().split(' ') for line in test_data_file]
+    # debug(test_data_matrix)
+    # generate weight by index
+    # exchange_data_matrix = [
+    #       sample_exchange_data = [ 
+    #           word_exchange_data = [
+    #               [weight, index, word_test_data]]]]
+    # Note: word_exchange_data is sorted by weight
+    exchange_data_matrix = []
+    for sample_test_data in test_data_matrix:
+        sample_exchange_data = []
+        for index in range(len(sample_test_data)):
+            word_test_data = sample_test_data[index]
+            try:
+                weight = weight_table[vocabulary.index(word_test_data)]
+            except ValueError:
+                weight = 0
+            word_exchange_data = [weight, index, word_test_data]
+            sample_exchange_data.append(word_exchange_data)
+        sample_exchange_data = sorted(sample_exchange_data,key=lambda l:l[0])
+        exchange_data_matrix.append(sample_exchange_data)
+    # debug(exchange_data_matrix)
+    # generate the index of class1 feature word
+    class1_feature_word_matrix = []
+    for vector_exchange in exchange_data_matrix:
+        vector_feature = []
+        for word_exchange in vector_exchange[0:2]:
+            # vector_feature.append(word_exchange[1])
+            pass
+        class1_feature_word_matrix.append(vector_feature)
+    # debug(class1_feature_word_matrix)
+    # write modified data
+    with open('./modified_data.txt', 'w') as modiefied_data_file:
+        for i in range(len(test_data_matrix)):
+            modiefied_data_list = test_data_matrix[i][:]
+            for j in range(len(class1_feature_word_matrix[i])):
+                index = class1_feature_word_matrix[i][j]
+                modiefied_data_list[j] = class0_vocabulary[i]
+            modiefied_data_str = ' '.join(modiefied_data_list)
+            # debug(modiefied_data_str)
+            modiefied_data_file.write(modiefied_data_str + '\n')
+
     ## You can check that the modified text is within the modification limits.
     modified_data='./modified_data.txt'
     # assert strategy_instance.check_data(test_data, modified_data)
+    log_result(clf, vocabulary, do_bern, do_log, do_norm)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
