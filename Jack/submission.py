@@ -1,18 +1,21 @@
 import helper
 import numpy as np
 
+
+################################ debug functions ###############################
 def debug(*argv):
     if False:
         print(*argv)
-
+        print()
 
 def debug_matrix(title, matrix):
     if False:
         print(title + ' = ')
         for line in matrix:
             print(line)
+        print()
 
-
+############################## train data functions ############################
 def get_vocabulary(strategy_instance):
     # generate a sorted list contains all words in all samples
     word_set = set()
@@ -75,7 +78,141 @@ def get_prediction(clf, file_path, vocabulary):
     return prediction
 
 
-def print_test(clf, vocabulary):
+############################# modify file functions ############################
+def get_weight_dict(weight_list, vocabulary):
+    weight_dict = dict()
+    for i in range(len(vocabulary)):
+        weight_dict[vocabulary[i]] = weight_list[i]
+    return weight_dict
+
+
+def get_class_vocabulary(weight_list, vocabulary, number):
+    # get the most distinctive words of vocabulary
+    # weight for class 0 is more negative
+    # weight for class 1 is more positvie
+    #
+    # combine two lists
+    dim = len(vocabulary)
+    combined_list = []
+    for i in range(dim):
+        combined_list.append([vocabulary[i], weight_list[i]])
+    # sort by weight
+    sorted_list = sorted(combined_list,key=lambda l:l[1])
+    # generate class_words
+    class0_vocabulary = []
+    class1_vocabulary = []
+    for i in range(dim):
+        class0_vocabulary.append(sorted_list[i][0])
+        class1_vocabulary.append(sorted_list[-1 - i][0])
+    return class0_vocabulary, class1_vocabulary
+
+
+
+def read_to_matrix(file_path):
+    # read txt file to matrix
+    with open(file_path,'r') as fh:
+        data_matrix=[line.strip().split(' ') for line in fh]
+    return data_matrix
+
+
+def get_class_word_matrix(weight_dict, input_matrix, number):
+    # get the most distinctive words of input_matrix without duplicated words
+    # weight for class 0 is more negative
+    # weight for class 1 is more positvie
+    #
+    # combine sample with weight
+    class0_word_matrix = []
+    class1_word_matrix = []
+    for input_vector in input_matrix:
+        # combine input_vector with weight
+        combined_vector = []
+        for word in set(input_vector):  # remove duplicated words
+            try:
+                combined_vector.append([word, weight_dict[word]])
+            except KeyError:    # give 0.0 to words that are not in vocabulary
+                combined_vector.append([word, 0.0])
+        # sort by weight
+        sorted_vector = sorted(combined_vector,key=lambda l:l[1])
+        # generate class0_vector
+        class0_vector = []
+        for word in sorted_vector:
+            class0_vector.append(word[0])
+        class0_word_matrix.append(class0_vector)
+        # generate class1_vector
+        class1_vector = []
+        for word in reversed(sorted_vector):
+            class1_vector.append(word[0])
+        class1_word_matrix.append(class1_vector)
+    return class0_word_matrix, class1_word_matrix
+
+
+def replace_all_occurrence(input_list, find, replace):
+    # replace find (a word, all occurrence) in input_list to replace (a word)
+    output_list = input_list[:]
+    for i in range(len(input_list)):
+        if input_list[i] == find:
+            output_list[i] = replace
+        else:
+            pass    # remains equal to input_list[i]
+    return output_list
+
+
+def get_modified_matrix(input_matrix, class_word_matrix,\
+        class_vocabulary, number):
+    # Input and Return format:
+    #   input_matrix: [input_vector: [input_word]]
+    #   output_matrix: [output_vector: [output_word]]
+    #
+    # Description:
+    #   modify number of input_word which are in find_vector 
+    # to different words which are in replace_vector.
+    #   so that output_matrix can be more like class in class_vocabulary
+    # rather than class in.
+    
+    output_matrix = []
+    # generate output_matrix
+    for i_line in range(len(input_matrix)):
+        # generate input_vector
+        input_vector = input_matrix[i_line]
+        # generate find_vector:
+        #   - find_vector is derived from class_word_matrix
+        find_vector = class_word_matrix[i_line]
+        # generate replace_vector:
+        #   - derived from class_vocabulary
+        #   - has number of words
+        #   - all words must not in input_vector
+        replace_vector = []
+        i_replace = 0
+        i_vocabulary = 0
+        while (i_replace < number):
+            if class_vocabulary[i_vocabulary] in input_vector:
+                i_vocabulary += 1
+            else:
+                replace_vector.append(class_vocabulary[i_vocabulary])
+                i_vocabulary += 1
+                i_replace +=1
+        # generate output_vector
+        output_vector = input_vector[:]
+        for i_word in range(number):
+            # replace words in find_vector to words in replace_vector
+            output_vector= replace_all_occurrence(output_vector,\
+                    find_vector[i_word], replace_vector[i_word])
+        output_matrix.append(output_vector)
+    # print('input_matrix = ', input_matrix, '\n')
+    # print('class_word_matrix = ', class_word_matrix, '\n')
+    # print('output_matrix = ', output_matrix, '\n')
+    return output_matrix
+
+
+def write_to_file(input_matrix ,file_path):
+    with open(file_path, 'w') as fh:
+        for input_vector in input_matrix:
+            line = ' '.join(input_vector) + '\n'
+            fh.write(line)
+
+
+################################ debug functions ###############################
+def show_test_result(clf, vocabulary):
     dim = len(vocabulary)
     # get prediction
     prediction0 = get_prediction(clf, './class-0.txt', vocabulary)
@@ -102,14 +239,17 @@ def print_test(clf, vocabulary):
     print('modiefied_data prediction =\n' + str(prediction_test))
 
 
-
+################################ fool_classifier ###############################
 def fool_classifier(test_data): ## Please do not change the function defination...
     ## Read the test data file, i.e., 'test_data.txt' from Present Working Directory...
     ## You are supposed to use pre-defined class: 'strategy()' in the file `helper.py` for model training (if any),
     #  and modifications limit checking
     strategy_instance=helper.strategy()
 
-    ############################# define parameter #############################
+    ########################### define parameter ###########################
+    n = int(10)     
+    # the number of words need to be updated
+    # which is 1/2 number of modification
     parameters={'gamma': 'auto',
                 'C': 1.0,
                 'kernel': 'linear',
@@ -135,7 +275,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     #    Independent term in kernel function.
     #    It is only significant in 'poly' and 'sigmoid'.
 
-    ############################### train data #################################
+    ############################# train data ###############################
     debug_matrix('class0', strategy_instance.class0)
     debug_matrix('class1', strategy_instance.class1)
     # get vocabulary
@@ -150,73 +290,44 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # training
     clf = strategy_instance.train_svm(parameters, x_train, y_train)
 
-    ############################### modify file ################################
-    # generate weight_table corresponded by vocabulary
-    # weight_table = clf.coef_.tolist()[0]
-    # class0_vocabulary = []
-    # for i in range(2):
-    #     class0_word = vocabulary[weight_table.index(sorted(weight_table)[i])]
-    #     class0_vocabulary.append(class0_word)
-    # class1_vocabulary = []
-    # for i in range(2):
-    #     class1_word = vocabulary[weight_table.index(sorted(weight_table)[-i - 1])]
-    #     class1_vocabulary.append(class1_word)
-    # # debug(vocabulary)
-    # # debug(weight_table)
-    # debug(class0_vocabulary)
-    # debug(class1_vocabulary)
-    # # read file
-    # with open('./test_data.reduced','r') as test_data_file:
-    #     test_data_matrix=[line.strip().split(' ') for line in test_data_file]
-    # # debug(test_data_matrix)
-    # # generate weight by index
-    # # exchange_data_matrix = [
-    # #       sample_exchange_data = [ 
-    # #           word_exchange_data = [
-    # #               [weight, index, word_test_data]]]]
-    # # Note: word_exchange_data is sorted by weight
-    # exchange_data_matrix = []
-    # for sample_test_data in test_data_matrix:
-    #     sample_exchange_data = []
-    #     for index in range(len(sample_test_data)):
-    #         word_test_data = sample_test_data[index]
-    #         try:
-    #             weight = weight_table[vocabulary.index(word_test_data)]
-    #         except ValueError:
-    #             weight = 0
-    #         word_exchange_data = [weight, index, word_test_data]
-    #         sample_exchange_data.append(word_exchange_data)
-    #     sample_exchange_data = sorted(sample_exchange_data,key=lambda l:l[0])
-    #     exchange_data_matrix.append(sample_exchange_data)
-    # # debug(exchange_data_matrix)
-    # # generate the index of class1 feature word
-    # class1_feature_word_matrix = []
-    # for vector_exchange in exchange_data_matrix:
-    #     vector_feature = []
-    #     for word_exchange in vector_exchange[0:2]:
-    #         # vector_feature.append(word_exchange[1])
-    #         pass
-    #     class1_feature_word_matrix.append(vector_feature)
-    # # debug(class1_feature_word_matrix)
-    # # write modified data
-    # with open('./modified_data.txt', 'w') as modiefied_data_file:
-    #     for i in range(len(test_data_matrix)):
-    #         modiefied_data_list = test_data_matrix[i][:]
-    #         for j in range(len(class1_feature_word_matrix[i])):
-    #             index = class1_feature_word_matrix[i][j]
-    #             modiefied_data_list[j] = class0_vocabulary[i]
-    #         modiefied_data_str = ' '.join(modiefied_data_list)
-    #         # debug(modiefied_data_str)
-    #         modiefied_data_file.write(modiefied_data_str + '\n')
-
-    ## You can check that the modified text is within the modification limits.
+    ############################# modify file ##############################
+    # change test_data from class1 to class0
+    # get weight_list
+    weight_list = clf.coef_.tolist()[0]
+    # debug('weight_list =\n', weight_list)
+    # get weight_dict
+    weight_dict = get_weight_dict(weight_list, vocabulary)
+    debug('weight_dict =\n', weight_dict)
+    # get_class_vocabulary
+    class0_vocabulary, class1_vocabulary =\
+            get_class_vocabulary(weight_list, vocabulary, n)
+    debug('class0_vocabulary =\n', class0_vocabulary)
+    debug('class1_vocabulary =\n', class1_vocabulary)
+    # read test_data.txt
+    test_data_matrix = read_to_matrix(test_data)
+    debug_matrix('test_data_matrix', test_data_matrix)
+    # get_class_word_matrix
+    class0_word_matrix, class1_word_matrix =\
+            get_class_word_matrix(weight_dict, test_data_matrix, n)
+    debug_matrix('class0_word_matrix', class0_word_matrix)
+    debug_matrix('class1_word_matrix', class1_word_matrix)
+    # get modified matrix
+    modified_data_matrix = get_modified_matrix(test_data_matrix,\
+            class1_word_matrix, class0_vocabulary, n)
+    debug_matrix('modified_data_matrix', modified_data_matrix)
+    # write to modified_data
     modified_data='./modified_data.txt'
-    # assert strategy_instance.check_data(test_data, modified_data)
-    print_test(clf, vocabulary)
+    write_to_file(modified_data_matrix ,modified_data)
+
+    ################################## test  ###################################
+    # Check that the modified text is within the modification limits.
+    assert strategy_instance.check_data(test_data, modified_data)
+    # Show test result
+    # show_test_result(clf, vocabulary)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
-#################################### test ######################################
+################################ main function #################################
 if __name__ == '__main__':
     test_data='./test_data.txt'
     strategy_instance = fool_classifier(test_data)

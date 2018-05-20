@@ -63,6 +63,11 @@ class strategy:
         for k in sorted(Original.keys()):
             record=set(Original[k])
             sample=set(Modified[k])
+            # new_set = (set(record)-set(sample)) | (set(sample)-set(record))
+            # new_list = sorted(list(new_set))
+            # if len(new_list) != 20:
+            #     print('in line ', k, ' len = ', len(new_list))
+            #     print(new_list)
             assert len((set(record)-set(sample)) | (set(sample)-set(record)))==20
         return True
 
