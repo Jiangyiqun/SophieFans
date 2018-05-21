@@ -1,4 +1,5 @@
 import helper
+from collections import defaultdict
 import numpy as np
 
 
@@ -91,32 +92,10 @@ def get_prediction(clf, file_path, vocabulary):
 
 ############################# modify file functions ############################
 def get_weight_dict(weight_list, vocabulary):
-    weight_dict = dict()
+    weight_dict = defaultdict(float)
     for i in range(len(vocabulary)):
         weight_dict[vocabulary[i]] = weight_list[i]
     return weight_dict
-
-
-def get_class_vocabulary(weight_list, vocabulary):
-    # get the most distinctive words of vocabulary
-    # weight for class 0 is more negative
-    # weight for class 1 is more positvie
-    #
-    # combine two lists
-    dim = len(vocabulary)
-    combined_list = []
-    for i in range(dim):
-        combined_list.append([vocabulary[i], weight_list[i]])
-    # sort by weight
-    sorted_list = sorted(combined_list,key=lambda l:l[1])
-    # generate class_words
-    class0_vocabulary = []
-    class1_vocabulary = []
-    for i in range(dim):
-        class0_vocabulary.append(sorted_list[i][0])
-        class1_vocabulary.append(sorted_list[-1 - i][0])
-    return class0_vocabulary, class1_vocabulary
-
 
 
 def read_to_matrix(file_path):
@@ -126,101 +105,80 @@ def read_to_matrix(file_path):
     return data_matrix
 
 
-def get_class_word_matrix(weight_dict, input_matrix, n):
-    # get the most distinctive words of input_matrix without duplicated words
-    # weight for class 0 is more negative
-    # weight for class 1 is more positvie
-    #
-    # combine sample with weight
-    class0_word_matrix = []
-    class1_word_matrix = []
-    for input_vector in input_matrix:
-        # combine input_vector with weight
-        combined_vector = []
-        for word in set(input_vector):  # remove duplicated words
-            try:
-                combined_vector.append([word, weight_dict[word]])
-            except KeyError:    # give 0.0 to words that are not in vocabulary
-                combined_vector.append([word, 0.0])
-        # sort by weight
-        sorted_vector = sorted(combined_vector,key=lambda l:l[1])
-        # generate class0_vector
-        class0_vector = []
-        for word in sorted_vector:
-            class0_vector.append(word[0])
-        class0_word_matrix.append(class0_vector)
-        # generate class1_vector
-        class1_vector = []
-        for word in reversed(sorted_vector):
-            class1_vector.append(word[0])
-        class1_word_matrix.append(class1_vector)
-    return class0_word_matrix, class1_word_matrix
+def get_class1_vector(input_vector, weight_dict):
+    # remove duplicated words
+    cleaned_vector = list(set(input_vector))
+    # sort based on weight (from class 1 to class 0)
+    combined_vector = []
+    for word in cleaned_vector:
+        combined_vector.append((word, weight_dict[word]))
+    sorted_vector = sorted(combined_vector,key=lambda l:l[1], reverse=True)
+    # unzip and generate output_vector
+    output_vector = []
+    for pair in sorted_vector:
+        output_vector.append(pair[0])
+    return output_vector
 
 
-def replace_all_occurrence(input_list, find, replace):
-    # replace find (a word, all occurrence) in input_list to replace (a word)
-    output_list = input_list[:]
-    for i in range(len(input_list)):
-        if input_list[i] == find:
-            output_list[i] = replace
+def get_class0_vocabulary(input_vector, weight_dict, vocabulary):
+    # remove words in vocabulary which are in input_vector as well
+    cleaned_vector = list(set(vocabulary) - set(input_vector))
+    # sort based on weight (from class 0 to class 1)
+    combined_vector = []
+    for word in cleaned_vector:
+        combined_vector.append((word, weight_dict[word]))
+    sorted_vector = sorted(combined_vector,key=lambda l:l[1])
+    # unzip and generate output_vector
+    output_vector = []
+    for pair in sorted_vector:
+        output_vector.append(pair[0])
+    return output_vector
+
+
+def get_modified_vector(input_vector, weight_dict, vocabulary, n):
+    # change class1_vector base on class0_vocabulary
+    class1_vector = get_class1_vector(input_vector, weight_dict)
+    class0_vocabulary =\
+            get_class0_vocabulary(input_vector, weight_dict, vocabulary)
+    i_1 = 0     # counter of class1_vector
+    i_0 = 0     # counter of class0_vocabulary
+    output_vector = []
+    # perform n time distinct change
+    for i in range(n):
+        # eg.   how can we get from class1 to class0
+        # class1_vector[i_1]               weight_sum
+        #           class0_vocabulary[i_0]              choice
+        #      1           -2                 <0    add class0_vocabulary[i_0]
+        #      1           -0.5               >0    rm class1_vector[i_1]
+        #      1           0.5                >0    rm  class1_vector[i_1]
+        #      1           2                  >0    class1_vector[i_1]
+        #      -1          -2                 <0    add class0_vocabulary[i_0]
+        #      -1          -0.5               <0    add class0_vocabulary[i_0]
+        #      -1          0.5                <0    add class0_vocabulary[i_0]
+        #      -1          2                  >0    rm  class1_vector[i_1]
+        #
+        weight_sum = weight_dict[class1_vector[i_1]]\
+                     + weight_dict[class0_vocabulary[i_0]]
+        if weight_sum > 0:
+            # rm  class1_vector[i_1]
+            i_1 += 1
         else:
-            pass    # remains equal to input_list[i]
-    return output_list
+            # add class0_vocabulary[i_0]
+            output_vector.append(class0_vocabulary[i_0])
+            i_0 += 1
+    # add remained items to output_vector
+    for i in range(i_1, len(class1_vector)):
+        output_vector.append(class1_vector[i])
+    return output_vector
 
 
-def dot_product(vector_a, vector_b):
-    return sum(a * b for a, b in zip(vector_a, vector_b))
-
-
-def get_modified_matrix(input_matrix, vocabulary, weight_list,\
-        class_word_matrix, class_vocabulary, n):
-    # Input and Return format:
-    #   input_matrix: [input_vector: [input_word]]
-    #   output_matrix: [output_vector: [output_word]]
-    #
-    # Description:
-    #   modify n of input_word which are in find_vector 
-    # to different words which are in replace_vector.
-    #   so that output_matrix can be more like class in class_vocabulary
-    # rather than class in.
-    # input_feature_matrix = get_feature(input_matrix, vocabulary)
+def get_modified_matrix(input_matrix, weight_dict, vocabulary, n):
+    # change from class1 to class0
     output_matrix = []
-    # generate output_matrix
-    for i_line in range(len(input_matrix)):
-        # generate input_vector
-        input_vector = input_matrix[i_line]
-        # generate find_vector:
-        #   - find_vector is derived from class_word_matrix
-        find_vector = class_word_matrix[i_line]
-        # generate replace_vector:
-        #   - derived from class_vocabulary
-        #   - has n of words
-        #   - all words must not in input_vector
-        replace_vector = []
-        i_replace = 0
-        i_vocabulary = 0
-        while (i_replace < n):
-            if class_vocabulary[i_vocabulary] in input_vector:
-                i_vocabulary += 1
-            else:
-                replace_vector.append(class_vocabulary[i_vocabulary])
-                i_vocabulary += 1
-                i_replace +=1
-        # generate output_vector
-        output_vector = input_vector[:]
-        for i_word in range(n):
-            # replace words in find_vector to words in replace_vector
-            output_vector= replace_all_occurrence(output_vector,\
-                    find_vector[i_word], replace_vector[i_word])
-        output_matrix.append(output_vector)
-        # output_feature = get_feature([output_vector], vocabulary)
-        # print("dot_product for input",dot_product(input_feature_matrix[i_line], weight_list))
-        # print("dot_product for output",dot_product(output_feature[0], weight_list))
-    # print('input_matrix = ', input_matrix, '\n')
-    # print('feature_matrix = ', feature_matrix, '\n')
-    # print('weight_list = ', weight_list, '\n')    
-    # print('class_word_matrix = ', class_word_matrix, '\n')
-    # print('output_matrix = ', output_matrix, '\n')
+    for input_vector in input_matrix:
+        output_vector = get_modified_vector(\
+                input_vector, weight_dict, vocabulary, n)
+        output_matrix.append(output_vector.copy())
     return output_matrix
 
 
@@ -270,7 +228,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     strategy_instance=helper.strategy()
 
     ########################### define parameter ###########################
-    n = 10     # the number of distinct words that can be modified
+    n = 20     # the number of distinct words that can be modified
     parameters={'gamma': 'auto',
                 'C': 1.0,
                 'kernel': 'linear',
@@ -312,31 +270,18 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     clf = strategy_instance.train_svm(parameters, x_train, y_train)
 
     ############################# modify file ##############################
-    # change test_data from class1 to class0
+    # read test_data.txt
+    test_data_matrix = read_to_matrix(test_data)
+    debug_matrix('test_data_matrix', test_data_matrix)
     # get weight_list
     weight_list = clf.coef_.tolist()[0]
     # debug('weight_list =\n', weight_list)
     # get weight_dict
     weight_dict = get_weight_dict(weight_list, vocabulary)
     debug_dict('weight_dict', weight_dict)
-    # get_class_vocabulary
-    class0_vocabulary, class1_vocabulary =\
-            get_class_vocabulary(weight_list, vocabulary)
-    debug('class0_vocabulary =\n', class0_vocabulary)
-    # debug('class1_vocabulary =\n', class1_vocabulary)
-
-    # read test_data.txt
-    test_data_matrix = read_to_matrix(test_data)
-    debug_matrix('test_data_matrix', test_data_matrix)
-    # get_class_word_matrix
-    class0_word_matrix, class1_word_matrix =\
-            get_class_word_matrix(weight_dict, test_data_matrix, n)
-    # debug_matrix('class0_word_matrix', class0_word_matrix)
-    debug_matrix('class1_word_matrix', class1_word_matrix)
     # get modified matrix
-    modified_data_matrix = get_modified_matrix(\
-            test_data_matrix, vocabulary, weight_list,\
-            class1_word_matrix, class0_vocabulary, n)
+    modified_data_matrix =\
+            get_modified_matrix(test_data_matrix, weight_dict, vocabulary, n)
     debug_matrix('modified_data_matrix', modified_data_matrix)
     # write to modified_data
     modified_data='./modified_data.txt'
@@ -346,7 +291,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # Check that the modified text is within the modification limits.
     assert strategy_instance.check_data(test_data, modified_data)
     # Show test result
-    show_test_result(clf, vocabulary)
+    # show_test_result(clf, vocabulary)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
