@@ -286,13 +286,13 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     x_train, vectorizer = get_x_train(strategy_instance)
     # # debug('x_train =\n', x_train)
     # # training
-    clf = strategy_instance.train_svm(parameters, x_train, y_train)
+    clf_start = strategy_instance.train_svm(parameters, x_train, y_train)
     # debug(clf)
-    # param_range = np.arange(0.001,1,0.01)
-    # param_grid = [{'C': param_range, 'kernel': ['linear']}]
-    # grid = GridSearchCV(clf_start, param_grid)
-    # grid.fit(x_train,y_train)
-    # clf = grid.best_estimator_
+    param_range = [2**i for i in range(-100, 100)]
+    param_grid = [{'C': param_range, 'kernel': ['linear']}]
+    grid = GridSearchCV(clf_start, param_grid)
+    grid.fit(x_train,y_train)
+    clf = grid.best_estimator_
     # ############################# modify file ##############################
     # # read test_data.txt
     test_data_matrix = read_to_matrix(test_data)
@@ -317,7 +317,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # Check that the modified text is within the modification limits.
     assert strategy_instance.check_data(test_data, modified_data)
     # Show test result
-    # show_test_result(clf, vectorizer)
+    show_test_result(clf, vectorizer)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
