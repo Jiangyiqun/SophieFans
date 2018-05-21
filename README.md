@@ -13,3 +13,9 @@
 - bernoulli model
 - dynamic change 20 words
 - remove all duplicated words in output
+
+## submit 4 Success = 26.000 %, based on submit 2
+
+- bag of word model
+- update fixed 10 words
+- add multi time words to output
