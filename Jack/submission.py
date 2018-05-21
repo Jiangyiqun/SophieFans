@@ -29,32 +29,35 @@ def get_vocabulary(strategy_instance):
     return vocabulary
 
 
-def get_feature(input_matrix, vocabulary):
+def get_feature_vector(input_vector, vocabulary):
+    dim = len(vocabulary)
+    output_vector = [0 for i in range(dim)]
+    for word in input_vector:
+        try:
+            i = vocabulary.index(word)
+            output_vector[i] += 1
+        except ValueError:
+            pass    # remains 0 when the word is not in word_table
+    return output_vector
+
+
+def get_feature_matrix(input_matrix, vocabulary):
     # arguments: 
     #   input_matrix = [ input_list = [word]]
     # return:
     #   output_matrix = [ output_list = [existence of word]]
     #   based on vocabulary
     #
-    dim = len(vocabulary)
     output_matrix = list()
-    for input_list in input_matrix:
-        # initialize freq_list with all 0
-        output_list = [0 for i in range(dim)]
-        # calculate the frequency
-        for word in input_list:
-            try:
-                i = vocabulary.index(word)
-                output_list[i] += 1
-            except ValueError:
-                pass    # pass when the word is not in word_table
-        output_matrix.append(output_list)
+    for input_vector in input_matrix:
+        output_vector = get_feature_vector(input_vector, vocabulary)
+        output_matrix.append(output_vector)
     return output_matrix
 
 
 def get_x_train(strategy_instance, vocabulary):
     word_matrix = strategy_instance.class0 + strategy_instance.class1
-    x_matrix = get_feature(word_matrix, vocabulary)
+    x_matrix = get_feature_matrix(word_matrix, vocabulary)
     x_train = np.array(x_matrix)
     return x_train
 
@@ -72,10 +75,11 @@ def get_prediction(clf, file_path, vocabulary):
     # generate feature
     with open(file_path,'r') as fh:
         word_matrix=[line.strip().split(' ') for line in fh]
-    x_matrix = get_feature(word_matrix, vocabulary)
+    x_matrix = get_feature_matrix(word_matrix, vocabulary)
     x_train = np.array(x_matrix)
     prediction = clf.predict(x_train)
-    return prediction
+    decision_function = clf.decision_function(x_train)
+    return prediction, decision_function
 
 
 ############################# modify file functions ############################
@@ -152,6 +156,8 @@ def replace_all_occurrence(input_list, find, replace):
     for i in range(len(input_list)):
         if input_list[i] == find:
             output_list[i] = replace
+            for _ in range(10):
+                output_list.append(replace)
         else:
             pass    # remains equal to input_list[i]
     return output_list
@@ -215,10 +221,10 @@ def write_to_file(input_matrix ,file_path):
 def show_test_result(clf, vocabulary):
     dim = len(vocabulary)
     # get prediction
-    prediction0 = get_prediction(clf, './class-0.txt', vocabulary)
-    prediction1 = get_prediction(clf, './class-1.txt', vocabulary)
-    prediction_test = get_prediction(clf, './test_data.txt', vocabulary)
-    prediction_mod = get_prediction(clf, './modified_data.txt', vocabulary)
+    prediction0, decision_function0 = get_prediction(clf, './class-0.txt', vocabulary)
+    prediction1, decision_function1 = get_prediction(clf, './class-1.txt', vocabulary)
+    prediction_test,decision_function_test = get_prediction(clf, './test_data.txt', vocabulary)
+    prediction_mod, decision_function_mod = get_prediction(clf, './modified_data.txt', vocabulary)
     # calculate success rate
     rate0 = prediction0.tolist().count(0) / prediction0.shape[0] * 100
     rate1 = prediction1.tolist().count(1) / prediction1.shape[0] * 100
@@ -237,6 +243,10 @@ def show_test_result(clf, vocabulary):
     print('class-1 prediction =\n' + str(prediction1))
     print('test_data prediction =\n' + str(prediction_test))
     print('modiefied_data prediction =\n' + str(prediction_mod))
+    print('class-0 decision_function =\n' + str(decision_function0))
+    print('class-1 decision_function =\n' + str(decision_function1))
+    print('test_data decision_function =\n' + str(decision_function_test))
+    print('modiefied_data decision_function =\n' + str(decision_function_mod))
 
 
 ################################ fool_classifier ###############################
