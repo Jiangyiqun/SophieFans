@@ -1,0 +1,70 @@
+class0 =
+['cat', 'bird', 'cat', 'ant', 'cat']
+['cat', 'bird', 'cat', 'dog']
+['cat', 'dog']
+
+class1 =
+['orange', 'apple', 'berry']
+['orange', 'apple']
+['berry', 'orange', 'berry']
+
+vocabulary =
+ ['ant', 'apple', 'berry', 'bird', 'cat', 'dog', 'orange']
+
+y_train =
+ [0 0 0 1 1 1]
+
+x_train =
+ [[1 0 0 1 1 0 0]
+ [0 0 0 1 1 1 0]
+ [0 0 0 0 1 1 0]
+ [0 1 1 0 0 0 1]
+ [0 1 0 0 0 0 1]
+ [0 0 1 0 0 0 1]]
+
+weight_dict =
+ant -0.210625
+apple 0.3159375
+berry 0.3159375
+bird -0.210625
+cat -0.631875
+dog -0.42125
+orange 0.631875
+
+class0_vocabulary =
+ ['cat', 'dog', 'ant', 'bird', 'apple', 'berry', 'orange']
+
+test_data_matrix =
+['apple', 'berry', 'apple', 'orange', 'apple', ',', ',']
+['is', 'berry', 'good', 'good', 'good']
+['orange', 'berry', 'berry']
+
+class1_word_matrix =
+['orange', 'berry', 'apple', ',']
+['berry', 'good', 'is']
+['orange', 'berry']
+
+modified_data_matrix =
+['apple', 'dog', 'apple', 'cat', 'apple', ',', ',']
+['is', 'cat', 'dog', 'dog', 'dog']
+['cat', 'dog', 'dog']
+
+########################## Test Result ############################
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma='auto', kernel='linear',
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+############################ Summery ##############################
+class-0 Success Rate = 100.0
+class-1 Success Rate = 100.0
+test_data Success Rate = 100.0
+modified_data Success Rate = 100.0
+############################# Detail ##############################
+class-0 prediction =
+[0 0 0]
+class-1 prediction =
+[1 1 1]
+test_data prediction =
+[1 1 1]
+modiefied_data prediction =
+[0 0 0]

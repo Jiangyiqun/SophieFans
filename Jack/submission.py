@@ -6,14 +6,21 @@ import numpy as np
 def debug(*argv):
     if False:
         print(*argv)
-        print()
+
+
+def debug_dict(title, my_dict):
+    debug(title + ' = ')
+    for key in my_dict:
+        debug(key, my_dict[key])
+    debug()
+
 
 def debug_matrix(title, matrix):
-    if False:
-        print(title + ' = ')
-        for line in matrix:
-            print(line)
-        print()
+    debug(title + ' = ')
+    for line in matrix:
+        debug(line)
+    debug()
+
 
 ############################## train data functions ############################
 def get_vocabulary(strategy_instance):
@@ -29,32 +36,35 @@ def get_vocabulary(strategy_instance):
     return vocabulary
 
 
-def get_feature(input_matrix, vocabulary):
+def get_feature_vector(input_vector, vocabulary):
+    dim = len(vocabulary)
+    output_vector = [0 for i in range(dim)]
+    for word in input_vector:
+        try:
+            i = vocabulary.index(word)
+            output_vector[i] = 1
+        except ValueError:
+            pass    # remains 0 when the word is not in word_table
+    return output_vector
+
+
+def get_feature_matrix(input_matrix, vocabulary):
     # arguments: 
     #   input_matrix = [ input_list = [word]]
     # return:
     #   output_matrix = [ output_list = [existence of word]]
     #   based on vocabulary
     #
-    dim = len(vocabulary)
     output_matrix = list()
-    for input_list in input_matrix:
-        # initialize freq_list with all 0
-        output_list = [0 for i in range(dim)]
-        # calculate the frequency
-        for word in input_list:
-            try:
-                i = vocabulary.index(word)
-                output_list[i] += 1
-            except ValueError:
-                pass    # pass when the word is not in word_table
-        output_matrix.append(output_list)
+    for input_vector in input_matrix:
+        output_vector = get_feature_vector(input_vector, vocabulary)
+        output_matrix.append(output_vector)
     return output_matrix
 
 
 def get_x_train(strategy_instance, vocabulary):
     word_matrix = strategy_instance.class0 + strategy_instance.class1
-    x_matrix = get_feature(word_matrix, vocabulary)
+    x_matrix = get_feature_matrix(word_matrix, vocabulary)
     x_train = np.array(x_matrix)
     return x_train
 
@@ -72,10 +82,11 @@ def get_prediction(clf, file_path, vocabulary):
     # generate feature
     with open(file_path,'r') as fh:
         word_matrix=[line.strip().split(' ') for line in fh]
-    x_matrix = get_feature(word_matrix, vocabulary)
+    x_matrix = get_feature_matrix(word_matrix, vocabulary)
     x_train = np.array(x_matrix)
     prediction = clf.predict(x_train)
-    return prediction
+    decision_function = clf.decision_function(x_train)
+    return prediction, decision_function
 
 
 ############################# modify file functions ############################
@@ -86,7 +97,7 @@ def get_weight_dict(weight_list, vocabulary):
     return weight_dict
 
 
-def get_class_vocabulary(weight_list, vocabulary, number):
+def get_class_vocabulary(weight_list, vocabulary):
     # get the most distinctive words of vocabulary
     # weight for class 0 is more negative
     # weight for class 1 is more positvie
@@ -115,7 +126,7 @@ def read_to_matrix(file_path):
     return data_matrix
 
 
-def get_class_word_matrix(weight_dict, input_matrix, number):
+def get_class_word_matrix(weight_dict, input_matrix, n):
     # get the most distinctive words of input_matrix without duplicated words
     # weight for class 0 is more negative
     # weight for class 1 is more positvie
@@ -157,18 +168,22 @@ def replace_all_occurrence(input_list, find, replace):
     return output_list
 
 
-def get_modified_matrix(input_matrix, class_word_matrix,\
-        class_vocabulary, number):
+def dot_product(vector_a, vector_b):
+    return sum(a * b for a, b in zip(vector_a, vector_b))
+
+
+def get_modified_matrix(input_matrix, vocabulary, weight_list,\
+        class_word_matrix, class_vocabulary, n):
     # Input and Return format:
     #   input_matrix: [input_vector: [input_word]]
     #   output_matrix: [output_vector: [output_word]]
     #
     # Description:
-    #   modify number of input_word which are in find_vector 
+    #   modify n of input_word which are in find_vector 
     # to different words which are in replace_vector.
     #   so that output_matrix can be more like class in class_vocabulary
     # rather than class in.
-    
+    # input_feature_matrix = get_feature(input_matrix, vocabulary)
     output_matrix = []
     # generate output_matrix
     for i_line in range(len(input_matrix)):
@@ -179,12 +194,12 @@ def get_modified_matrix(input_matrix, class_word_matrix,\
         find_vector = class_word_matrix[i_line]
         # generate replace_vector:
         #   - derived from class_vocabulary
-        #   - has number of words
+        #   - has n of words
         #   - all words must not in input_vector
         replace_vector = []
         i_replace = 0
         i_vocabulary = 0
-        while (i_replace < number):
+        while (i_replace < n):
             if class_vocabulary[i_vocabulary] in input_vector:
                 i_vocabulary += 1
             else:
@@ -193,12 +208,17 @@ def get_modified_matrix(input_matrix, class_word_matrix,\
                 i_replace +=1
         # generate output_vector
         output_vector = input_vector[:]
-        for i_word in range(number):
+        for i_word in range(n):
             # replace words in find_vector to words in replace_vector
             output_vector= replace_all_occurrence(output_vector,\
                     find_vector[i_word], replace_vector[i_word])
         output_matrix.append(output_vector)
+        # output_feature = get_feature([output_vector], vocabulary)
+        # print("dot_product for input",dot_product(input_feature_matrix[i_line], weight_list))
+        # print("dot_product for output",dot_product(output_feature[0], weight_list))
     # print('input_matrix = ', input_matrix, '\n')
+    # print('feature_matrix = ', feature_matrix, '\n')
+    # print('weight_list = ', weight_list, '\n')    
     # print('class_word_matrix = ', class_word_matrix, '\n')
     # print('output_matrix = ', output_matrix, '\n')
     return output_matrix
@@ -215,10 +235,10 @@ def write_to_file(input_matrix ,file_path):
 def show_test_result(clf, vocabulary):
     dim = len(vocabulary)
     # get prediction
-    prediction0 = get_prediction(clf, './class-0.txt', vocabulary)
-    prediction1 = get_prediction(clf, './class-1.txt', vocabulary)
-    prediction_test = get_prediction(clf, './test_data.txt', vocabulary)
-    prediction_mod = get_prediction(clf, './modified_data.txt', vocabulary)
+    prediction0, decision_function0 = get_prediction(clf, './class-0.txt', vocabulary)
+    prediction1, decision_function1 = get_prediction(clf, './class-1.txt', vocabulary)
+    prediction_test,decision_function_test = get_prediction(clf, './test_data.txt', vocabulary)
+    prediction_mod, decision_function_mod = get_prediction(clf, './modified_data.txt', vocabulary)
     # calculate success rate
     rate0 = prediction0.tolist().count(0) / prediction0.shape[0] * 100
     rate1 = prediction1.tolist().count(1) / prediction1.shape[0] * 100
@@ -237,7 +257,10 @@ def show_test_result(clf, vocabulary):
     print('class-1 prediction =\n' + str(prediction1))
     print('test_data prediction =\n' + str(prediction_test))
     print('modiefied_data prediction =\n' + str(prediction_mod))
-
+    print('class-0 decision_function =\n' + str(decision_function0))
+    print('class-1 decision_function =\n' + str(decision_function1))
+    print('test_data decision_function =\n' + str(decision_function_test))
+    print('modiefied_data decision_function =\n' + str(decision_function_mod))
 
 ################################ fool_classifier ###############################
 def fool_classifier(test_data): ## Please do not change the function defination...
@@ -247,9 +270,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     strategy_instance=helper.strategy()
 
     ########################### define parameter ###########################
-    n = int(10)     
-    # the number of words need to be updated
-    # which is 1/2 number of modification
+    n = 10     # the number of distinct words that can be modified
     parameters={'gamma': 'auto',
                 'C': 1.0,
                 'kernel': 'linear',
@@ -297,22 +318,24 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # debug('weight_list =\n', weight_list)
     # get weight_dict
     weight_dict = get_weight_dict(weight_list, vocabulary)
-    debug('weight_dict =\n', weight_dict)
+    debug_dict('weight_dict', weight_dict)
     # get_class_vocabulary
     class0_vocabulary, class1_vocabulary =\
-            get_class_vocabulary(weight_list, vocabulary, n)
+            get_class_vocabulary(weight_list, vocabulary)
     debug('class0_vocabulary =\n', class0_vocabulary)
-    debug('class1_vocabulary =\n', class1_vocabulary)
+    # debug('class1_vocabulary =\n', class1_vocabulary)
+
     # read test_data.txt
     test_data_matrix = read_to_matrix(test_data)
     debug_matrix('test_data_matrix', test_data_matrix)
     # get_class_word_matrix
     class0_word_matrix, class1_word_matrix =\
             get_class_word_matrix(weight_dict, test_data_matrix, n)
-    debug_matrix('class0_word_matrix', class0_word_matrix)
+    # debug_matrix('class0_word_matrix', class0_word_matrix)
     debug_matrix('class1_word_matrix', class1_word_matrix)
     # get modified matrix
-    modified_data_matrix = get_modified_matrix(test_data_matrix,\
+    modified_data_matrix = get_modified_matrix(\
+            test_data_matrix, vocabulary, weight_list,\
             class1_word_matrix, class0_vocabulary, n)
     debug_matrix('modified_data_matrix', modified_data_matrix)
     # write to modified_data
@@ -323,7 +346,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # Check that the modified text is within the modification limits.
     assert strategy_instance.check_data(test_data, modified_data)
     # Show test result
-    # show_test_result(clf, vocabulary)
+    show_test_result(clf, vocabulary)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
