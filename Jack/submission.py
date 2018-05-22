@@ -37,6 +37,7 @@ def get_x_train(strategy_instance):
     return x_train, vectorizer
 
 
+
 def get_y_train(strategy_instance):
     len0 = len(strategy_instance.class0)
     len1 = len(strategy_instance.class1)
@@ -228,7 +229,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     ########################### define parameter ###########################
     n = 20     # the number of distinct words that can be modified
     parameters={'gamma': 'auto',
-                'C': 1.0,
+                'C': 4.0,
                 'kernel': 'linear',
                 'degree': 3,
                 'coef0': 0.0
@@ -266,7 +267,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # debug(clf)
 
     # grid search
-    # param_range = [2**i for i in range(-100, 100)]
+    # param_range = [2**i for i in range(-5, 16)]
     # param_grid = [{'C': param_range, 'kernel': ['linear']}]
     # grid = GridSearchCV(clf_start, param_grid)
     # grid.fit(x_train,y_train)
@@ -279,11 +280,17 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     weight_list = clf.coef_.tolist()[0]
     debug('weight_list =\n', weight_list)
 
+    deanna = sorted(zip(weight_list, vocabulary))
+    with open('./deanna.txt', 'w+') as fh:
+        for line in deanna:
+            fh.write(str(line[1]) + ': ' + str(line[0]) + '\n')
+
+
     data_matrix = read_to_matrix(test_data)
-    debug_matrix('data_matrix =\n', data_matrix)
+    # debug_matrix('data_matrix =\n', data_matrix)
 
     feature_matrix = get_feature_matrix(data_matrix, vectorizer)
-    debug_matrix('feature_matrix =\n', feature_matrix)
+    # debug_matrix('feature_matrix =\n', feature_matrix)
 
     # get modified matrix
     modified_matrix = []
@@ -292,7 +299,8 @@ def fool_classifier(test_data): ## Please do not change the function defination.
         feature_vector = feature_matrix[i]
         to_rm_words, to_add_words =\
                 get_to_modified_words(feature_vector, weight_list, vocabulary, n)
-        # log_change(to_rm_words, to_add_words)
+        # debug('to_rm_words', to_rm_words)
+        # debug('to_add_words', to_add_words)
         modified_vector = get_modified_vector(data_vector,\
                 to_rm_words, to_add_words)
         # debug('modified_vector =\n', modified_vector)
