@@ -3,6 +3,7 @@ from collections import defaultdict
 import numpy as np
 from sklearn.model_selection import GridSearchCV
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 ################################ debug functions ###############################
 def debug(*argv):
@@ -30,7 +31,7 @@ def get_x_train(strategy_instance):
     for para in strategy_instance.class0 + strategy_instance.class1:
         corpus.append(' '.join(para))
     # print(corpus)
-    vectorizer = CountVectorizer(binary=True, token_pattern='\S+')
+    vectorizer = TfidfVectorizer(binary=True, token_pattern='\S+')
     x_train = vectorizer.fit_transform(corpus).toarray()
     # print(x_train[0])
     return x_train, vectorizer
@@ -89,21 +90,21 @@ def get_to_modified_words(feature_vector, weight_list, vocabulary, n):
     to_add_words = []       # the word need to be removed
     # split data_feature into two lists
     for i in range(len(feature_vector)):
-        if feature_vector[i] == 1:
-            to_rm_candidates.append(i)
-            to_rm_weight.append(weight_list[i])
-        else:   # feature_vector[i] == 0
+        if feature_vector[i] == 0:
             to_add_candidates.append(i)
             to_add_weight.append(weight_list[i])
+        else:
+            to_rm_candidates.append(i)
+            to_rm_weight.append(weight_list[i])
+    # debug('to_rm_candidates =\n', to_rm_candidates)
+    # debug('to_rm_weight =\n', to_rm_weight)
+    # debug('to_add_candidates =\n', to_add_candidates)
+    # debug('to_add_weight =\n', to_add_weight)
     # sort by weight
     to_rm_weight, to_rm_candidates =\
             zip(*sorted(zip(to_rm_weight, to_rm_candidates), reverse=True))
     to_add_weight, to_add_candidates =\
             zip(*sorted(zip(to_add_weight, to_add_candidates)))
-    # debug('to_rm_candidates =\n', to_rm_candidates)
-    # debug('to_rm_weight =\n', to_rm_weight)
-    # debug('to_add_candidates =\n', to_add_candidates)
-    # debug('to_add_weight =\n', to_add_weight)
     # dynamically utilise to_rm_candidates and to_add_candidates
     i_rm = 0      # pointer in to_rm_weight & to_rm_candidates
     i_add = 0     # pointer in to_add_weight & to_add_candidates
@@ -255,10 +256,10 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # debug_matrix('class0', strategy_instance.class0)
     # debug_matrix('class1', strategy_instance.class1)
     y_train = get_y_train(strategy_instance)
-    # debug('y_train =\n', y_train)
+    debug('y_train =\n', y_train)
 
     x_train, vectorizer = get_x_train(strategy_instance)
-    # debug('x_train =\n', x_train)
+    debug('x_train =\n', x_train)
 
     # training
     clf = strategy_instance.train_svm(parameters, x_train, y_train)
@@ -279,10 +280,10 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     debug('weight_list =\n', weight_list)
 
     data_matrix = read_to_matrix(test_data)
-    # debug_matrix('data_matrix =\n', data_matrix)
+    debug_matrix('data_matrix =\n', data_matrix)
 
     feature_matrix = get_feature_matrix(data_matrix, vectorizer)
-    # debug_matrix('feature_matrix =\n', feature_matrix)
+    debug_matrix('feature_matrix =\n', feature_matrix)
 
     # get modified matrix
     modified_matrix = []
@@ -306,7 +307,7 @@ def fool_classifier(test_data): ## Please do not change the function defination.
     # Check that the modified text is within the modification limits.
     assert strategy_instance.check_data(test_data, modified_data)
     # Show test result
-    # show_test_result(clf, vectorizer)
+    show_test_result(clf, vectorizer)
     return strategy_instance ## NOTE: You are required to return the instance of this class.
 
 
