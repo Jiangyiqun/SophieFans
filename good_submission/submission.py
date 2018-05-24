@@ -80,7 +80,7 @@ def get_x_train(strategy_instance):
     for para in strategy_instance.class0 + strategy_instance.class1:
         corpus.append(' '.join(para))
     # print(corpus)
-    vectorizer = TfidfVectorizer(binary=True, token_pattern='\S+')
+    vectorizer = TfidfVectorizer(token_pattern='\S+')
     x_train = vectorizer.fit_transform(corpus).toarray()
     # print(x_train[0])
     return x_train, vectorizer
@@ -121,7 +121,6 @@ def remove_all_occurrence(input_list, word):
 
 
 def get_modified_vector(test_vector, vocabulary, weight_list, vectorizer):
-    magic_number = 20  # the number of word that need to be delete
     to_rm_index = []   # words in test_vector
     to_rm_weight = []
     to_add_index = []  # words not in test_vector
@@ -146,11 +145,11 @@ def get_modified_vector(test_vector, vocabulary, weight_list, vectorizer):
     to_add_weight, to_add_index =\
             zip(*sorted(zip(to_add_weight, to_add_index)))
     # remove words
-    for i in range(magic_number):
+    for i in range(15):
         modified_vector = remove_all_occurrence(\
                 modified_vector, vocabulary[to_rm_index[i]])
     # add words
-    for i in range(20 - magic_number):
+    for i in range(5):
         modified_vector.append(vocabulary[to_add_index[i]])
     return modified_vector
 
